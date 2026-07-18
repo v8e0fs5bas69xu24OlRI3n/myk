@@ -1,75 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Domain Lander</title>
-<link rel="stylesheet" href="test.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain for Sale</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="page">
 
-    <div class="top">
+    <!-- Hero -->
+    <section class="hero">
 
         <div class="logo">
-            ▲
+            <img src="logo.svg" alt="Logo">
         </div>
 
-        <h2>Domain for sale</h2>
-
-        <h1>SSQR.com</h1>
-
-        <div class="features">
-            <p>✓ <b>Free</b> transaction support</p>
-            <p>✓ <b>Secure</b> payments</p>
-            <p>✓ <b>Spaceship</b> reliability</p>
-        </div>
-
-    </div>
-
-    <div class="card">
-
-        <div class="option active">
-            <div class="radio"></div>
-
-            <div class="label">
-                <strong>Buy now</strong>
-            </div>
-
-            <div class="price">
-                $185,650
-            </div>
-        </div>
-
-        <div class="option">
-            <div class="radio empty"></div>
-
-            <div class="label">
-                <strong>Lease to own</strong>
-            </div>
-
-            <div class="price">
-                $9,250<br>
-                <small>x24 months</small>
-            </div>
-        </div>
-
-        <p class="payments">Payment methods</p>
-
-        <div class="icons">
-            💳 💳 💳 💳 💳 💳 💳 💳
-        </div>
-
-        <button>Next →</button>
-
-        <p class="footer">
-            You will be redirected to <b>spaceship.com</b>
+        <p class="subtitle">
+            Domain for sale
         </p>
 
-    </div>
+        <h1 class="domain">
+            SSQR.com
+        </h1>
+
+        <div class="features">
+
+            <div class="feature">
+                <span class="check">✓</span>
+                <span><strong>Free</strong> transaction support</span>
+            </div>
+
+            <div class="feature">
+                <span class="check">✓</span>
+                <span><strong>Secure</strong> payments</span>
+            </div>
+
+            <div class="feature">
+                <span class="check">✓</span>
+                <span><strong>Spaceship</strong> reliability</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Bottom Card -->
+    <section class="card">
+
+        <form id="purchaseForm">
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="purchase"
+                    value="buy"
+                    data-url="https://example.com/buy">
+
+                <span class="radio"></span>
+
+                <div class="option-content">
+
+                    <div class="option-title">
+                        Buy now
+                    </div>
+
+                </div>
+
+                <div class="price">
+                    $185,650
+                </div>
+
+            </label>
+
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="purchase"
+                    value="lease"
+                    data-url="https://example.com/lease">
+
+                <span class="radio"></span>
+
+                <div class="option-content">
+
+                    <div class="option-title">
+                        Lease to own
+                    </div>
+
+                </div>
+
+                <div class="price">
+                    <div>$9,250</div>
+                    <small>x24 months</small>
+                </div>
+
+            </label>
+
+        </form>
+
+        <div class="payment-section">
+
+            <p class="payment-title">
+                Payment methods
+            </p>
+
+            <div class="payment-icons">
+
+                <img src="images/visa.svg" alt="Visa">
+                <img src="images/mastercard.svg" alt="Mastercard">
+                <img src="images/amex.svg" alt="American Express">
+                <img src="images/paypal.svg" alt="PayPal">
+                <img src="images/googlepay.svg" alt="Google Pay">
+                <img src="images/applepay.svg" alt="Apple Pay">
+
+            </div>
+
+        </div>
+
+        <button
+            id="nextButton"
+            type="button">
+            Next →
+        </button>
+
+        <p class="redirect-text">
+            You will be redirected to
+            <strong>spaceship.com</strong>
+        </p>
+
+    </section>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
