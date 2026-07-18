@@ -1,73 +1,83 @@
-// =============================
-// Purchase Options
-// =============================
+// ===============================
+// Domain Lander
+// ===============================
 
-const radios = document.querySelectorAll('input[name="purchase"]');
-const nextButton = document.getElementById("nextButton");
+document.addEventListener("DOMContentLoaded", () => {
 
-let selectedRadio = null;
+    const radios = document.querySelectorAll('input[name="purchase"]');
+    const nextButton = document.getElementById("nextButton");
 
-// Disable button until an option is selected
-nextButton.disabled = true;
+    let selected = null;
 
-radios.forEach(radio => {
+    // Disable button until an option is selected
+    nextButton.disabled = true;
 
-    radio.addEventListener("click", function (e) {
+    // -------------------------------
+    // Select / Deselect Radio Buttons
+    // -------------------------------
 
-        // Clicking the already-selected radio deselects it
-        if (selectedRadio === this) {
+    radios.forEach(radio => {
 
-            this.checked = false;
-            selectedRadio = null;
-            nextButton.disabled = true;
+        radio.addEventListener("click", function (e) {
 
-            return;
-        }
+            // Prevent the browser's default radio behaviour
+            e.preventDefault();
 
-        // Select this radio
-        selectedRadio = this;
+            // If clicking the selected radio, deselect it
+            if (selected === this) {
 
-        radios.forEach(r => {
-            if (r !== this) {
-                r.checked = false;
+                this.checked = false;
+                selected = null;
+
+                nextButton.disabled = true;
+
+                return;
             }
-        });
 
-        this.checked = true;
-        nextButton.disabled = false;
+            // Otherwise deselect all radios
+            radios.forEach(r => r.checked = false);
+
+            // Select clicked radio
+            this.checked = true;
+            selected = this;
+
+            nextButton.disabled = false;
+
+        });
 
     });
 
-});
+    // -------------------------------
+    // Next Button
+    // -------------------------------
 
+    nextButton.addEventListener("click", () => {
 
-// =============================
-// Next Button
-// =============================
+        if (!selected)
+            return;
 
-nextButton.addEventListener("click", function () {
+        const url = selected.dataset.url;
 
-    if (!selectedRadio) {
-        return;
-    }
+        if (url && url.trim() !== "") {
 
-    const url = selectedRadio.dataset.url;
+            window.location.href = url;
 
-    if (url && url.trim() !== "") {
-        window.location.href = url;
-    }
+        }
 
-});
+    });
 
+    // -------------------------------
+    // Keyboard Support
+    // -------------------------------
 
-// =============================
-// Keyboard Support
-// =============================
+    document.addEventListener("keydown", e => {
 
-document.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" && !nextButton.disabled) {
 
-    if (e.key === "Enter" && !nextButton.disabled) {
-        nextButton.click();
-    }
+            nextButton.click();
+
+        }
+
+    });
 
 });
