@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domain for Sale</title>
 
-    <link rel="stylesheet" href="test.css">
+    <title>Domain For Sale</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
 <div class="page">
 
-    <!-- Hero -->
+    <!-- ================= HERO ================= -->
+
     <section class="hero">
 
-        <div class="logo">
-            <img src="logo.svg" alt="Logo">
-        </div>
+        <img
+            src="images/logo.svg"
+            alt="Spaceship"
+            class="logo">
 
-        <p class="subtitle">
+        <h2 class="subtitle">
             Domain for sale
-        </p>
+        </h2>
 
         <h1 class="domain">
             SSQR.com
@@ -29,17 +34,17 @@
         <div class="features">
 
             <div class="feature">
-                <span class="check">✓</span>
+                <span class="tick">✓</span>
                 <span><strong>Free</strong> transaction support</span>
             </div>
 
             <div class="feature">
-                <span class="check">✓</span>
+                <span class="tick">✓</span>
                 <span><strong>Secure</strong> payments</span>
             </div>
 
             <div class="feature">
-                <span class="check">✓</span>
+                <span class="tick">✓</span>
                 <span><strong>Spaceship</strong> reliability</span>
             </div>
 
@@ -47,66 +52,81 @@
 
     </section>
 
-    <!-- Bottom Card -->
+    <!-- ================= CARD ================= -->
+
     <section class="card">
 
         <form id="purchaseForm">
 
+            <!-- BUY NOW -->
+
             <label class="option">
 
                 <input
                     type="radio"
                     name="purchase"
-                    value="buy"
                     data-url="https://example.com/buy">
 
                 <span class="radio"></span>
 
-                <div class="option-content">
+                <div class="details">
 
-                    <div class="option-title">
+                    <span class="title">
                         Buy now
-                    </div>
+                    </span>
 
                 </div>
 
                 <div class="price">
-                    $185,650
+
+                    <span class="amount">
+                        $185,650
+                    </span>
+
                 </div>
 
             </label>
 
+            <!-- LEASE -->
 
             <label class="option">
 
                 <input
                     type="radio"
                     name="purchase"
-                    value="lease"
                     data-url="https://example.com/lease">
 
                 <span class="radio"></span>
 
-                <div class="option-content">
+                <div class="details">
 
-                    <div class="option-title">
+                    <span class="title">
                         Lease to own
-                    </div>
+                    </span>
 
                 </div>
 
                 <div class="price">
-                    <div>$9,250</div>
-                    <small>x24 months</small>
+
+                    <span class="amount">
+                        $9,250
+                    </span>
+
+                    <span class="months">
+                        x24 months
+                    </span>
+
                 </div>
 
             </label>
 
         </form>
 
-        <div class="payment-section">
+        <!-- PAYMENT METHODS -->
 
-            <p class="payment-title">
+        <div class="payments">
+
+            <p class="payments-title">
                 Payment methods
             </p>
 
@@ -115,30 +135,48 @@
                 <img src="images/visa.svg" alt="Visa">
                 <img src="images/mastercard.svg" alt="Mastercard">
                 <img src="images/amex.svg" alt="American Express">
-                <img src="images/paypal.svg" alt="PayPal">
+                <img src="images/discover.svg" alt="Discover">
                 <img src="images/googlepay.svg" alt="Google Pay">
                 <img src="images/applepay.svg" alt="Apple Pay">
+                <img src="images/paypal.svg" alt="PayPal">
 
             </div>
 
         </div>
 
+        <!-- NEXT BUTTON -->
+
         <button
-            id="nextButton"
-            type="button">
-            Next →
+            type="button"
+            id="nextButton">
+
+            <span>Next</span>
+
+            <svg width="22" height="22" viewBox="0 0 24 24">
+                <path
+                    d="M5 12H19M13 6L19 12L13 18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+
         </button>
 
-        <p class="redirect-text">
+        <p class="redirect">
+
             You will be redirected to
+
             <strong>spaceship.com</strong>
+
         </p>
 
     </section>
 
 </div>
 
-<script src="test.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
